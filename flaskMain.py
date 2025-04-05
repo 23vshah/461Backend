@@ -20,7 +20,7 @@ ALLOWED_EXTENSIONS = {"txt", "pdf", "md"}
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-api_key = ""
+api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("Missing OpenAI API key! Set OPENAI_API_KEY as an environment variable.")
 
